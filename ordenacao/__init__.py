@@ -1,5 +1,24 @@
-"""Ordenação adaptativa: escolhe sozinha o método mais adequado para cada lista."""
-from .escolher import escolher
-from .ordenar import ordenar
+from .escolher import escolher, ordenar
+from .metodos import (
+    METODOS,
+    FaixaGrandeDemais,
+    base,
+    contagem,
+    hibrida,
+    insercao,
+    intercalacao,
+    rapida,
+)
 
-__all__ = ["escolher", "ordenar"]
+__all__ = [
+    "escolher",
+    "ordenar",
+    "METODOS",
+    "FaixaGrandeDemais",
+    "insercao",
+    "intercalacao",
+    "rapida",
+    "hibrida",
+    "contagem",
+    "base",
+]

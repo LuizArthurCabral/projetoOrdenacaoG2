@@ -1,0 +1,1 @@
+Python 3.12.12 (CPython), Linux 6.18.54.1-microsoft-standard-WSL2, CPU: Intel(R) Core(TM) i5-8265U CPU @ 1.60GHz, núcleos: 8

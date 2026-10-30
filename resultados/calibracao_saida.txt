@@ -1,0 +1,123 @@
+luizcm@DESKTOP-7RC88VI:~/projetoOrdenacaoG2$ python benchmark/calibrar.py
+Python 3.12.12 (CPython), Linux 6.18.54.1-microsoft-standard-WSL2, CPU: Intel(R) Core(TM) i5-8265U CPU @ 1.60GHz, núcleos: 8 
+
+== N_MINI: a partir de que tamanho a inserção deixa de ganhar? ==
+   (chaves aleatórias < 10^9; 'estreita' = faixa igual a n)
+  larga    n=8    insercao=1.3 µs*  intercalacao=4.7 µs  rapida=12.0 µs  hibrida=2.0 µs  base=271.3 µs
+  larga    n=16   insercao=4.2 µs  intercalacao=13.1 µs  rapida=13.9 µs  hibrida=4.0 µs*  base=225.8 µs
+  larga    n=24   insercao=7.3 µs*  intercalacao=20.5 µs  rapida=22.1 µs  hibrida=8.1 µs  base=248.2 µs
+  larga    n=32   insercao=18.4 µs  intercalacao=30.1 µs  rapida=30.6 µs  hibrida=14.0 µs*  base=249.3 µs
+  larga    n=48   insercao=37.9 µs  intercalacao=44.5 µs  rapida=46.4 µs  hibrida=22.3 µs*  base=270.7 µs
+  larga    n=64   insercao=67.2 µs  intercalacao=60.3 µs  rapida=60.1 µs  hibrida=31.6 µs*  base=253.7 µs
+  larga    n=96   insercao=124.1 µs  intercalacao=94.0 µs  rapida=92.8 µs  hibrida=47.1 µs*  base=274.5 µs
+  larga    n=128  insercao=219.3 µs  intercalacao=135.2 µs  rapida=130.7 µs  hibrida=75.2 µs*  base=299.6 µs
+  larga    n=192  insercao=482.7 µs  intercalacao=202.1 µs  rapida=193.7 µs  hibrida=111.9 µs*  base=330.4 µs
+  larga    n=256  insercao=921.3 µs  intercalacao=294.7 µs  rapida=266.1 µs  hibrida=167.3 µs*  base=365.8 µs
+  estreita n=8    insercao=1.3 µs*  intercalacao=5.7 µs  rapida=5.3 µs  hibrida=1.6 µs  contagem=2.7 µs  base=61.0 µs
+  estreita n=16   insercao=4.3 µs*  intercalacao=12.5 µs  rapida=14.0 µs  hibrida=5.1 µs  contagem=4.7 µs  base=61.2 µs
+  estreita n=24   insercao=10.2 µs  intercalacao=20.5 µs  rapida=19.1 µs  hibrida=8.6 µs  contagem=6.2 µs*  base=59.6 µs
+  estreita n=32   insercao=15.7 µs  intercalacao=28.3 µs  rapida=29.8 µs  hibrida=13.6 µs  contagem=8.5 µs*  base=70.3 µs
+  estreita n=48   insercao=37.2 µs  intercalacao=44.7 µs  rapida=43.4 µs  hibrida=22.7 µs  contagem=12.4 µs*  base=69.2 µs
+  estreita n=64   insercao=49.9 µs  intercalacao=61.0 µs  rapida=57.9 µs  hibrida=30.4 µs  contagem=15.0 µs*  base=66.8 µs
+  estreita n=96   insercao=122.8 µs  intercalacao=94.9 µs  rapida=90.2 µs  hibrida=52.1 µs  contagem=23.2 µs*  base=75.7 µs
+  estreita n=128  insercao=231.1 µs  intercalacao=137.7 µs  rapida=127.7 µs  hibrida=69.8 µs  contagem=28.3 µs*  base=85.4 µs
+  estreita n=192  insercao=543.5 µs  intercalacao=223.0 µs  rapida=206.6 µs  hibrida=114.0 µs  contagem=44.3 µs*  base=98.5 µs
+  estreita n=256  insercao=1.0 ms  intercalacao=312.8 µs  rapida=264.9 µs  hibrida=163.6 µs  contagem=61.7 µs*  base=111.0 µs
+  -> /home/luizcm/projetoOrdenacaoG2/resultados/calibracao_n_mini.csv
+
+== ALFA: até que faixa/n a contagem ainda ganha? (n = 20 000) ==
+  faixa/n=0.25   contagem=3.2 ms*  base=6.1 ms  rapida=37.5 ms  hibrida=41.7 ms
+  faixa/n=0.5    contagem=4.2 ms*  base=7.1 ms  rapida=41.3 ms  hibrida=43.1 ms
+  faixa/n=1      contagem=5.7 ms*  base=6.3 ms  rapida=39.6 ms  hibrida=36.8 ms
+  faixa/n=2      contagem=7.5 ms  base=6.6 ms*  rapida=38.5 ms  hibrida=40.6 ms
+  faixa/n=4      contagem=10.6 ms*  base=11.7 ms  rapida=57.3 ms  hibrida=45.8 ms
+  faixa/n=8      contagem=16.7 ms  base=10.1 ms*  rapida=42.1 ms  hibrida=41.5 ms
+  faixa/n=16     contagem=26.0 ms  base=9.0 ms*  rapida=41.3 ms  hibrida=41.7 ms
+  faixa/n=32     contagem=42.3 ms  base=9.2 ms*  rapida=48.4 ms  hibrida=61.0 ms
+  faixa/n=64     contagem=82.8 ms  base=8.9 ms*  rapida=43.6 ms  hibrida=41.3 ms
+  faixa/n=128    contagem=135.0 ms  base=8.5 ms*  rapida=46.6 ms  hibrida=42.6 ms
+  -> /home/luizcm/projetoOrdenacaoG2/resultados/calibracao_alfa.csv
+
+== BASE (radix) x comparação, variando bits da chave e n ==
+   modelo: base se passadas * (n + FIXO_BASE) <= n * log2(n)
+  n=128     bits=8   passadas=1 base/melhor_comp= 1.16 regra=base real=comp ERRO
+  n=128     bits=16  passadas=2 base/melhor_comp= 2.34 regra=base real=comp ERRO
+  n=128     bits=24  passadas=3 base/melhor_comp= 3.37 regra=comp real=comp ok
+  n=128     bits=32  passadas=4 base/melhor_comp= 3.44 regra=comp real=comp ok
+  n=128     bits=40  passadas=5 base/melhor_comp= 6.85 regra=comp real=comp ok
+  n=128     bits=48  passadas=6 base/melhor_comp= 6.38 regra=comp real=comp ok
+  n=128     bits=62  passadas=8 base/melhor_comp= 7.85 regra=comp real=comp ok
+  n=256     bits=8   passadas=1 base/melhor_comp= 0.64 regra=base real=base ok
+  n=256     bits=16  passadas=2 base/melhor_comp= 1.36 regra=base real=comp ERRO
+  n=256     bits=24  passadas=3 base/melhor_comp= 1.93 regra=base real=comp ERRO
+  n=256     bits=32  passadas=4 base/melhor_comp= 2.22 regra=comp real=comp ok
+  n=256     bits=40  passadas=5 base/melhor_comp= 2.84 regra=comp real=comp ok
+  n=256     bits=48  passadas=6 base/melhor_comp= 3.43 regra=comp real=comp ok
+  n=256     bits=62  passadas=8 base/melhor_comp= 4.21 regra=comp real=comp ok
+  n=1000    bits=8   passadas=1 base/melhor_comp= 0.17 regra=base real=base ok
+  n=1000    bits=16  passadas=2 base/melhor_comp= 0.33 regra=base real=base ok
+  n=1000    bits=24  passadas=3 base/melhor_comp= 0.52 regra=base real=base ok
+  n=1000    bits=32  passadas=4 base/melhor_comp= 0.66 regra=base real=base ok
+  n=1000    bits=40  passadas=5 base/melhor_comp= 0.80 regra=base real=base ok
+  n=1000    bits=48  passadas=6 base/melhor_comp= 0.96 regra=base real=base ok
+  n=1000    bits=62  passadas=8 base/melhor_comp= 1.25 regra=comp real=comp ok
+  n=10000   bits=8   passadas=1 base/melhor_comp= 0.10 regra=base real=base ok
+  n=10000   bits=16  passadas=2 base/melhor_comp= 0.20 regra=base real=base ok
+  n=10000   bits=24  passadas=3 base/melhor_comp= 0.26 regra=base real=base ok
+  n=10000   bits=32  passadas=4 base/melhor_comp= 0.34 regra=base real=base ok
+  n=10000   bits=40  passadas=5 base/melhor_comp= 0.40 regra=base real=base ok
+  n=10000   bits=48  passadas=6 base/melhor_comp= 0.50 regra=base real=base ok
+  n=10000   bits=62  passadas=8 base/melhor_comp= 0.65 regra=base real=base ok
+  n=100000  bits=8   passadas=1 base/melhor_comp= 0.09 regra=base real=base ok
+  n=100000  bits=16  passadas=2 base/melhor_comp= 0.17 regra=base real=base ok
+  n=100000  bits=24  passadas=3 base/melhor_comp= 0.22 regra=base real=base ok
+  n=100000  bits=32  passadas=4 base/melhor_comp= 0.31 regra=base real=base ok
+  n=100000  bits=40  passadas=5 base/melhor_comp= 0.40 regra=base real=base ok
+  n=100000  bits=48  passadas=6 base/melhor_comp= 0.44 regra=base real=base ok
+  n=100000  bits=62  passadas=8 base/melhor_comp= 0.67 regra=base real=base ok
+  regra concorda com a medição (tolerância 15%): 31/35
+  -> /home/luizcm/projetoOrdenacaoG2/resultados/calibracao_k_base.csv
+
+== MAX_QUEDAS: até que desordem a inserção ainda ganha de 'base'? (n = 20 000) ==
+   perturbação local (trocas entre vizinhos a <= 10 posições).
+  trocas=    0% quedas/64: média= 0.00 p95= 0 máx= 0 insercao/melhor_outra= 0.77  insercao=2.9 ms*  base=10.9 ms  hibrida=3.8 ms  rapida=33.9 ms
+  trocas=  0.1% quedas/64: média= 0.12 p95= 1 máx= 1 insercao/melhor_outra= 0.64  insercao=3.2 ms*  base=12.9 ms  hibrida=5.0 ms  rapida=36.3 ms
+  trocas=  0.5% quedas/64: média= 0.71 p95= 3 máx= 3 insercao/melhor_outra= 0.66  insercao=3.0 ms*  base=11.2 ms  hibrida=4.6 ms  rapida=30.7 ms
+  trocas=    1% quedas/64: média= 1.19 p95= 3 máx= 5 insercao/melhor_outra= 0.67  insercao=3.1 ms*  base=11.8 ms  hibrida=4.6 ms  rapida=30.6 ms
+  trocas=    2% quedas/64: média= 2.29 p95= 5 máx= 7 insercao/melhor_outra= 0.56  insercao=3.1 ms*  base=12.5 ms  hibrida=5.5 ms  rapida=32.5 ms
+  trocas=    5% quedas/64: média= 5.61 p95=10 máx=13 insercao/melhor_outra= 0.49  insercao=4.0 ms*  base=11.6 ms  hibrida=8.1 ms  rapida=30.1 ms
+  trocas=   10% quedas/64: média= 9.87 p95=14 máx=19 insercao/melhor_outra= 0.43  insercao=5.0 ms*  base=11.7 ms  hibrida=12.3 ms  rapida=32.2 ms
+  trocas=   20% quedas/64: média=16.30 p95=22 máx=25 insercao/melhor_outra= 0.58  insercao=6.7 ms*  base=11.5 ms  hibrida=16.2 ms  rapida=33.4 ms
+  trocas=   40% quedas/64: média=23.81 p95=30 máx=32 insercao/melhor_outra= 0.76  insercao=9.1 ms*  base=11.9 ms  hibrida=23.3 ms  rapida=32.0 ms
+  -> /home/luizcm/projetoOrdenacaoG2/resultados/calibracao_quedas.csv
+
+== Mesma pergunta, mas com trocas entre posições QUAISQUER (n = 20 000) ==
+   é aqui que olhar uma amostra deixa de bastar: poucas quedas, muitas inversões.
+  trocas=    0% quedas/64 média= 0.00 insercao/melhor_outra=   0.67  insercao=2.8 ms*  base=11.7 ms  hibrida=4.2 ms
+  trocas= 0.05% quedas/64 média= 0.06 insercao/melhor_outra=   1.91  insercao=23.3 ms  base=12.2 ms*  hibrida=17.0 ms
+  trocas=  0.1% quedas/64 média= 0.14 insercao/melhor_outra=   3.36  insercao=42.8 ms  base=12.7 ms*  hibrida=19.4 ms
+  trocas= 0.25% quedas/64 média= 0.36 insercao/melhor_outra=   7.29  insercao=81.1 ms  base=11.1 ms*  hibrida=21.4 ms
+  trocas=  0.5% quedas/64 média= 0.53 insercao/melhor_outra=  13.40  insercao=146.0 ms  base=10.9 ms*  hibrida=22.5 ms
+  trocas=    1% quedas/64 média= 1.33 insercao/melhor_outra=  22.44  insercao=256.5 ms  base=11.4 ms*  hibrida=28.0 ms
+  trocas=    2% quedas/64 média= 2.35 insercao/melhor_outra=  52.65  insercao=569.8 ms  base=10.8 ms*  hibrida=30.2 ms
+  -> /home/luizcm/projetoOrdenacaoG2/resultados/calibracao_quedas_longas.csv
+
+== PADRAO_COMPARACAO: rapida x hibrida x intercalacao, chaves de 62 bits ==
+  n=1000    rapida=1.7 ms  hibrida=1.3 ms*  intercalacao=1.7 ms  base=1.7 ms
+  n=20000   rapida=47.2 ms  hibrida=50.8 ms  intercalacao=61.6 ms  base=28.3 ms*
+  n=100000  rapida=257.8 ms  hibrida=260.3 ms  intercalacao=298.3 ms  base=152.3 ms*
+  -> /home/luizcm/projetoOrdenacaoG2/resultados/calibracao_padrao.csv
+
+== CORTE_HIBRIDA: tamanho de bloco da híbrida (n = 20 000, aleatório) ==
+  corte=1   50.4 ms
+  corte=4   45.5 ms
+  corte=8   41.4 ms
+  corte=16  41.7 ms
+  corte=24  49.2 ms
+  corte=32  51.0 ms
+  corte=48  56.8 ms
+  corte=64  53.3 ms
+  corte=96  68.1 ms
+  -> /home/luizcm/projetoOrdenacaoG2/resultados/calibracao_corte.csv
+
+luizcm@DESKTOP-7RC88VI:~/projetoOrdenacaoG2$ 
